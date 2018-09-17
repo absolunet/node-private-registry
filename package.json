@@ -1,0 +1,36 @@
+{
+  "name": "@absolunet/private-registry",
+  "version": "1.0.0",
+  "description": "Private registry for classes",
+  "definition": "",
+  "homepage": "https://github.com/absolunet/node-private-registry",
+  "author": {
+    "name": "Absolunet",
+    "url": "https://absolunet.com"
+  },
+  "keywords": [
+    "class",
+    "private",
+    "registry",
+    "weakmap"
+  ],
+  "license": "MIT",
+  "repository": {
+    "url": "git://github.com/absolunet/node-private-registry.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/absolunet/node-private-registry/issues"
+  },
+  "engines": {
+    "node": ">= 10.10.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "ava"
+  },
+  "devDependencies": {
+    "@absolunet/tester": "2.1.1"
+  },
+  "dependencies": {}
+}
