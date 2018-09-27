@@ -25,11 +25,23 @@ const __ = require('@absolunet/private-registry');
 class Foo {
 
 	constructor(id) {
-		__(this).set('id', id);
+		__(this).set({
+			id:   `id::${id}`,
+			seed: Math.random()
+		});
+	}
+
+	set bar(id) {
+		__(this).set('id', `id::${id}`);
 	}
 
 	get bar() {
 		return `My id is ${__(this).get('id')}`;
+	}
+
+	get bar2() {
+		const { id, seed } = __(this).get();
+		return `${id}::${seed}`;
 	}
 
 }
@@ -40,10 +52,54 @@ const b = new Foo('456');
 
 console.log(a.bar);
 console.log(b.bar);
+console.log(b.bar2);
 
-// My id is 123
-// My id is 456
+// My id is id::123
+// My id is id::456
+// id::456::0.0337644127126262
 ```
+
+
+## API
+
+### get()
+Return `Object` of all registry entries
+
+
+
+### get(name)
+Return value of a registry's entry
+
+#### name
+*Required*<br>
+Type: `String`<br>
+Entry's name.
+
+
+
+### set(object)
+Set all entries from object into the registry
+
+#### object
+*Required*<br>
+Type: `Object`<br>
+Object which each entry will be added to the registry
+
+
+
+### set(name, value)
+Set entry into the registry
+
+#### name
+*Required*<br>
+Type: `String`<br>
+Entry's name.
+
+#### value
+*Required*<br>
+Type: Any<br>
+Value of the entry
+
 
 
 ## License
