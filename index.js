@@ -3,7 +3,9 @@
 //--------------------------------------------------------
 'use strict';
 
-const registry = new WeakMap();
+global.___26ee9882accbf27edabf94573016c024absolunetPrivateRegistry___ = global.___26ee9882accbf27edabf94573016c024absolunetPrivateRegistry___ || new WeakMap();
+
+const registry = global.___26ee9882accbf27edabf94573016c024absolunetPrivateRegistry___;
 
 const getRegistry = (key) => {
 	return registry.get(key) || {};
